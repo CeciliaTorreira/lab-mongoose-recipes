@@ -60,6 +60,17 @@ mongoose
         title: "Rigatoni alla Genovese" }, { duration: 100
       })
      })
+     .then(()=>{
+      return Recipe.deleteOne({title: "Carrot Cake"})
+     })
+     .then(()=>
+     console.log("Receta eliminada")
+     )
   .catch(error => {
-    console.error('Error connecting to the database', error);
-  });
+    console.error('Error connecting to the database', error)
+    
+      });
+      mongoose.connection.close(()=>
+  
+      {console.log( "Conexión finalizada")})
+     
